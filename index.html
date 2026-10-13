@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbor Court · Hotel Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="side" id="side">
+  <div class="brand"><span class="key"></span><b>Harbor Court</b></div>
+  <nav>
+    <button class="nav on" data-view="dashboard">Dashboard</button>
+    <button class="nav" data-view="rooms">Rooms</button>
+    <button class="nav" data-view="bookings">Bookings</button>
+    <button class="nav" data-view="guests">Guests</button>
+  </nav>
+  <div class="side-foot"><button id="reset" class="link">Reset demo data</button></div>
+</aside>
+<div class="main">
+  <header class="top">
+    <button id="menu" class="icon" aria-label="Menu">☰</button>
+    <input id="search" type="search" placeholder="Search guest, room or booking">
+    <button id="theme" class="icon" aria-label="Toggle dark mode">◐</button>
+    <button id="newBtn" class="btn">New booking</button>
+  </header>
+  <main>
+    <section id="dashboard" class="view on"></section>
+    <section id="rooms" class="view"></section>
+    <section id="bookings" class="view"></section>
+    <section id="guests" class="view"></section>
+  </main>
+</div>
+<div class="modal" id="modal" hidden>
+  <form class="sheet" id="form">
+    <h2>New booking</h2>
+    <label>Guest name<input name="guest" required></label>
+    <label>Phone<input name="phone" type="tel" required></label>
+    <div class="row">
+      <label>Room<select name="room" id="roomSel" required></select></label>
+      <label>Nights<input name="nights" type="number" min="1" max="30" value="1"></label>
+    </div>
+    <label>Check-in<input name="date" type="date" required></label>
+    <p class="total">Total <b id="total">₹0</b></p>
+    <div class="actions"><button type="button" class="btn ghost" id="cancel">Cancel</button><button class="btn">Confirm booking</button></div>
+  </form>
+</div>
+<div id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
